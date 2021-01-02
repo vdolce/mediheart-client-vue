@@ -30,6 +30,10 @@
         "title":"Main feature 3",
         "description":"Put here some information about your feature"
       }
+    },
+    "intermediateSection":{
+      "title":"Keep track of your information",
+      "subtitle":"Try this smart way to have your health information a click away. "
     }
   },
 

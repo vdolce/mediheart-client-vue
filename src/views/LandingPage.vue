@@ -24,8 +24,49 @@
                 <p class="custom-subtitle"> {{ $t('LandingPage.subtitle.part1') }} <br> {{ $t('LandingPage.subtitle.part2') }} </p>
               </v-col>
               <v-col cols="12" md="7" sm="12" class="pt-0 pb-0" align="center" justify="center">
-                <v-img :src="require('@/assets/img/final_landing_img.png')"  min-height="400px" max-height="530px" min-width="700px" max-width="1000px"></v-img>
+                <v-img :src="require('@/assets/img/final_landing_img.png')" ></v-img>
               </v-col>
+            </v-row>
+          </v-card>
+        </v-col>         
+      </v-row>
+    </v-col>
+
+    <!-- **************************************************            
+            SEZIONE INTERMEDIA CON ALTRE INFO 
+    *******************************************************-->
+    <v-col cols="12" class="pt-0 pb-0 mt-12">
+      <v-row
+        align="center"
+        justify="center"
+        color="secondary"
+        class="intermediate-section"
+      >      
+        <v-col cols="12" class="pt-0 pb-0 card-container">
+          <v-card            
+            class="pl-3 pr-3 mt-0 pt-5 mb-0 pb-5 container"                        
+            flat
+            max-width="1024px"
+            color="#eb5788"      
+          >
+            <v-row
+              align="center"
+              justify="center"
+            >      
+
+              <v-col cols="12" md="7" sm="12" class="pt-0 pb-0" align="center" justify="center" v-if="this.$vuetify.breakpoint.mdAndUp">
+                <v-img :src="require('@/assets/img/personal-info-demo.png')" class="intermediate-image"></v-img>
+              </v-col>
+
+              <v-col cols="12" md="5" sm="12" class="pt-0 pb-0 text-center">
+                <h3 class="intermediate-title">{{ $t('LandingPage.intermediateSection.title') }}</h3>
+                <p class="intermediate-subtitle"> {{ $t('LandingPage.intermediateSection.subtitle') }} </p>
+              </v-col>
+              
+              <v-col cols="12" md="7" sm="12" class="pt-0 pb-0" align="center" justify="center" v-if="!this.$vuetify.breakpoint.mdAndUp">
+                <v-img :src="require('@/assets/img/personal-info-demo.png')" class="intermediate-image"></v-img>
+              </v-col>
+
             </v-row>
           </v-card>
         </v-col>         
@@ -102,8 +143,6 @@
         </v-col>         
       </v-row>
     </v-col>
-
-
 
 
 <!-- **************************************************            
@@ -286,5 +325,23 @@ export default {
  
 .footer-img{
   display: inline-block;
+}
+
+.intermediate-section{
+  background: #eb5788;
+}
+
+.intermediate-title{
+  font-size:30px !important;
+  color: #fff;
+}
+
+.intermediate-image{
+  border-radius: 10px;
+}
+
+.intermediate-subtitle{
+  font-size:18px !important;
+  color: rgba(255, 255, 255, 0.6)
 }
 </style>
