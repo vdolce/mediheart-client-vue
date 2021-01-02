@@ -97,8 +97,8 @@
                   align="center"
                   justify="center"                
                 >                  
-                  <div class="align-img flex-grow-1">
-                    <v-img :src="require('@/assets/img/Heart.png')" :contain="true" max-height="200px" max-width="200px"></v-img>
+                  <div>
+                    <v-img :src="require('@/assets/img/blood_type.png')" :contain="true" max-height="190px" max-width="190px"></v-img>
                   </div>                  
                   <h2 class="text-center primary-title mt-5" >{{ $t('LandingPage.boxSection.box1.title') }}</h2>
                   <p class="text-center mt-2 font-weight-normal box-description">{{ $t('LandingPage.boxSection.box1.description') }}</p>
@@ -115,7 +115,7 @@
                   justify="center"
                 >
                   <div >
-                    <v-img :src="require('@/assets/img/Heart.png')" :contain="true" max-height="213px" max-width="213px"></v-img>
+                    <v-img :src="require('@/assets/img/Folder.png')" :contain="true" max-height="190px" max-width="190px"></v-img>
                   </div>
                   <h2 class="text-center primary-title mt-5" >{{ $t('LandingPage.boxSection.box2.title') }}</h2>
                   <p class="text-center mt-2 font-weight-normal box-description">{{ $t('LandingPage.boxSection.box2.description') }}</p>
@@ -131,8 +131,8 @@
                   align="center"
                   justify="center"
                 >
-                  <div class="align-img">
-                    <v-img :src="require('@/assets/img/Heart.png')" :contain="true" max-height="200px" max-width="200px"></v-img>
+                  <div>
+                    <v-img :src="require('@/assets/img/hearth_security.png')" :contain="true" max-height="200px" max-width="200px"></v-img>
                   </div>
                   <h2 class="text-center primary-title mt-5" >{{ $t('LandingPage.boxSection.box3.title') }}</h2>
                   <p class="text-center mt-2 font-weight-normal box-description">{{ $t('LandingPage.boxSection.box3.description') }}</p>
