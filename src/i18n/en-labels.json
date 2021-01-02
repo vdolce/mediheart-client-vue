@@ -1,0 +1,134 @@
+{
+  "Common": {
+    "email": "Email",
+    "password":"Password",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "yes": "yes",
+    "no":"no"
+  },
+
+  "LandingPage":{
+    "title": {
+      "part1":"Your Health",
+      "part2":"in your Hands"
+    },
+    "subtitle":{
+      "part1": "A smart way to keep tracking of your health.",
+      "part2": "Take care of your body, it’s the only place you have to live."
+    },
+    "boxSection":{
+      "box1":{
+        "title":"Store your blood type easily",
+        "description":"You don't need to remember your blood type. Mediheart will do it for you once and for all."
+      },
+      "box2":{
+        "title":"Keep your medical records",
+        "description":"Add your new info in a easy way. Your medical records are now up to date."
+      },
+      "box3":{
+        "title":"Share info with your doctor securely",
+        "description":"When it's time for your appointment, share your medical records with your doctor."
+      }
+    },
+    "intermediateSection":{
+      "title":"Keep track of your health information",
+      "subtitle":"An online Personal Health Records service that you can use to keep track of information from your doctor visits, tests and procedures. "
+    }
+  },
+
+  "Login": {
+    "title": "Login",
+    "loginButton": "Login",
+    "forgotPassword":"Forgot your password ?",
+    "noAccount":"Don't have an account?",
+    "signupButton":"Sign Up",
+    "rules":{
+      "email":{
+        "mandatory":"E-mail is required",
+        "valid":"Email must be valid"
+      }
+    }
+  },
+
+  "Signup": {
+    "title": "Sign up with your e-mail address",    
+    "confirmPassword":"Confirm password",
+    "loginLink":"Log in here",
+    "accept":"Accept",
+    "terms":"Terms",
+    "and":"and",
+    "conditions": "Conditions",
+    "signupButton":"Sign Up",
+    "haveAlreadyAccount":"Already registered?",
+    "rules":{
+      "email":{
+        "mandatory":"E-mail is required",
+        "valid":"Email must be valid"
+      },
+      "password":"with at least one capital letter, a number and a special character",
+      "confirmationPassword":"Password must match"
+    }
+  },
+
+  "UserHomepage":{
+    "title":"Blood exams",
+    "subtitle":"Keep an eye on your blood exams",
+    "lastCheckupDate":"Last checkup date: ",
+    "bloodTable":{
+      "component": "Component",
+      "value": "Value",
+      "status": "Status"
+    }
+  },
+
+  "PersonalInfo":{
+    "title": "Personal Info",
+    "subtitle": "See your personal information",
+    "firstname": "Firstname",
+    "lastname": "Lastname",
+    "age": "Age",
+    "gender":"Gender",
+    "bloodType": "Blood Type"
+  },
+
+  "PersonalInfoModify":{
+    "title": "Personal Info",
+    "subtitle": "Modify your personal data",
+    "firstname": "Firstname",
+    "lastname": "Lastname",
+    "birthDate": "Birth date",
+    "gender":"Gender",
+    "bloodType": "Blood Type",
+    "rules":{
+      "minLength":"Minimun two characters",
+      "onlyLetters": "Only letters accepted"
+    }
+  },
+
+  "Settings":{
+    "title": "Settings",
+    "subtitle": "Manage your account",
+    "sections":{
+      "changePassword": "Change your password",
+      "deleteAccount": "Delete your account"
+    }
+  },
+
+  "ChangePassword": {
+    "title": "Change your password",
+    "subtitle": "Change your password at any time",
+    "oldPassword": "Current password",
+    "newPassword1": "New password",
+    "newPassword2": "Confirm password",
+    "rules":{
+      "newPassword":"with at least one capital letter, a number and a special character",
+      "confirmationPassword":"Passwords must match"
+    }
+  },
+
+  "DialogBox":{
+    "warning": "Warning",
+    "question":"Are you sure you want to delete the section "
+  }
+}

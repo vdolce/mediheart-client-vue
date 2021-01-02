@@ -1,0 +1,110 @@
+.v-application{
+  font-family: Roboto, sans-serif;  
+}
+
+a{
+    text-decoration: none;
+}
+
+.primary-title{
+  color:#0097a7;
+}
+
+.secondary-title{
+  color:#ec407a;
+}
+
+.custom-text{
+    color: #298103 !important;
+}
+
+.color-success{
+    background-color: #298103 !important;
+    color: #ffffff !important;
+  }
+
+.color-off{
+background-color: rgb(170, 165, 165) !important;
+color: #ffffff !important;
+}
+
+/* modificata questa classe per v-select dentro site-overview -> da mobile non visualizzabile  */
+.v-input__control{
+    min-height: 48px;
+    padding: 0;
+    min-width: 210px;
+}
+
+.v-application a{
+  color:inherit;
+}
+
+.main-container{
+  max-width: 838px;  
+}
+
+.custom-container{
+  background-color: #fff!important;  
+}
+
+.custom-date-input > .v-input__control > .v-input__slot{
+  width: 135px !important;
+}
+
+.theme--light.v-text-field--solo > .v-input__control > .v-input__slot {
+  background: #f5f2f2 !important;
+}
+
+.v-text-field fieldset, .v-text-field .v-input__control, .v-text-field .v-input__slot {
+  border-radius: 5px;
+}
+
+ .v-input__control{
+  min-width: 120px !important;
+}
+
+.theme--light.v-list-item--active::before {
+  opacity: 0.12 !important;
+  /* color: #0097a7 !important; */
+}
+
+
+.custom-title{
+  font-size:1.375rem !important;  /* }not used bacause of headline class on title*/
+  margin-bottom: 8px !important;
+  margin-top: 8px !important;
+  color: #ec407a;  
+}
+
+.first-table-column{
+  min-width: 30px;
+  max-width: 60px;  
+}
+
+.header-table{
+  color: #5f6368;
+  font-weight: 500;
+  font-size: .6875rem;
+}
+
+.element-table{
+  color: #202124;  
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.v-card:not(.v-sheet--tile):not(.v-card--shaped){
+  border-radius: 8px !important;
+}
+
+
+/******** Login & Signup Views ********/
+.container{
+  display: inline-block !important;
+  text-align: left !important;
+}
+
+.card-container{
+  text-align: center !important;
+}
+/* **************************************/
