@@ -115,7 +115,7 @@
                   justify="center"
                 >
                   <div >
-                    <v-img :src="require('@/assets/img/Folder.png')" :contain="true" max-height="190px" max-width="190px"></v-img>
+                    <v-img :src="require('@/assets/img/Folder.png')" :contain="true" max-height="185px" max-width="185px"></v-img>
                   </div>
                   <h2 class="text-center primary-title mt-5" >{{ $t('LandingPage.boxSection.box2.title') }}</h2>
                   <p class="text-center mt-2 font-weight-normal box-description">{{ $t('LandingPage.boxSection.box2.description') }}</p>
