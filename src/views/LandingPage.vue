@@ -47,7 +47,7 @@
             class="pl-3 pr-3 mt-0 pt-5 mb-0 pb-5 container"                        
             flat
             max-width="1024px"
-            color="#eb5788"      
+            color="rgb(160 39 79)"      
           >
             <v-row
               align="center"
@@ -58,7 +58,7 @@
                 <v-img :src="require('@/assets/img/personal-info-demo.png')" class="intermediate-image"></v-img>
               </v-col>
 
-              <v-col cols="12" md="5" sm="12" class="pt-0 pb-0 text-center">
+              <v-col cols="12" md="5" sm="12" class="pt-0 pb-0 text-center" >
                 <h3 class="intermediate-title">{{ $t('LandingPage.intermediateSection.title') }}</h3>
                 <p class="intermediate-subtitle"> {{ $t('LandingPage.intermediateSection.subtitle') }} </p>
               </v-col>
@@ -328,7 +328,7 @@ export default {
 }
 
 .intermediate-section{
-  background: #eb5788;
+  background: rgb(160 39 79);
 }
 
 .intermediate-title{
