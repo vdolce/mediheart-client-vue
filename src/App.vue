@@ -2,12 +2,12 @@
   <v-app id="inspire">
     
     <!-- TOOLBAR -->
-    <LandingPageToolbar v-if="showLandingPageToolbar()"/>
-    <NavBar v-if="!showLandingPageToolbar()"/>
+    <LandingPageToolbar v-if="showLandingPageToolbar() && !notFoundPage()"/>
+    <NavBar v-if="!showLandingPageToolbar() && !notFoundPage()"/>
  
     <!-- CONTENT USER PAGE -->
-    <v-content v-bind:class="{'custom-container':!isLandingPage()}" class="mt-12">
-      <v-container fluid v-bind:class="{'custom-container':!isLandingPage()}"  v-if="!isLandingPage()">
+    <v-content class="custom-container mt-12">
+      <v-container class="custom-container">
         <Alert/>
 
         <!-- MAIN CARD -->
@@ -23,19 +23,8 @@
       </v-container>
     </v-content>
 
-    <!-- LANDING PAGE ONLY-->
-    <v-row
-      align="center"
-      justify="center"
-      v-if="isLandingPage()"
-    >
-      <v-col class="mb-0 pb-0">            
-        <router-view></router-view>
-      </v-col>
-    </v-row>
-
     <!-- FOOTER -->
-    <Footer v-if="!showLandingPageToolbar()"/>
+    <Footer v-if="!showLandingPageToolbar() && !notFoundPage()"/>
 
   </v-app>
 </template>
@@ -62,11 +51,11 @@ import Alert from './components/Alert'
     methods:{
 
       showLandingPageToolbar(){        
-          return this.$route.name=='landing-page' || this.$route.name=='login' || this.$route.name=='signup';
+          return this.$route.name=='login' || this.$route.name=='signup';
       },
 
-      isLandingPage(){        
-          return this.$route.name=='landing-page';
+      notFoundPage(){        
+          return this.$route.name=='page-not-found';
       },
 
     }
