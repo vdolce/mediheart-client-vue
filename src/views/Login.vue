@@ -43,11 +43,8 @@
         
     <!-- login action -->
     <v-card-actions class="mt-0 mb-2 pl-4 pr-4">
-      <v-row>                
-        <v-col cols="6" class="mt-2">              
-            {{ $t('Login.forgotPassword') }}             
-        </v-col>
-        <v-col cols="5" offset="1">    
+      <v-row>
+        <v-col cols="5" offset="7">    
             <v-btn 
               color="secondary" 
               rounded 

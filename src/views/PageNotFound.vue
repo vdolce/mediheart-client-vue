@@ -1,22 +1,11 @@
 <template>
-  
-  <v-card            
-    class="pl-3 pr-3 mt-0 pt-0 mb-0 pb-0 container"                        
-    flat
-    outlined
-    elevation="1"
-    max-width="750px"
-  >         
-          
-    <v-list-item three-line>
-      <v-list-item-content>            
-        <v-list-item-title  class="text-center custom-title"> 404 - Page not Found </v-list-item-title>            
-      </v-list-item-content>          
-    </v-list-item>
-
-
-  </v-card>
-  
+  <div class="mt-12 px-3">
+    <h1>NOT FOUND</h1>
+    <p>You just hit a route that doesn't exist... the sadness.</p>
+    <router-link :to="{ name: 'login'}">
+      <a class="go-back-link" > Go Back</a>
+    </router-link>
+  </div>
 </template>
 
 <script>
@@ -34,6 +23,10 @@ export default {
 </script>
 
 <style scoped>
+  .go-back-link{
+    text-decoration: underline;
+    color: black !important; 
+  }
 
 
 </style>

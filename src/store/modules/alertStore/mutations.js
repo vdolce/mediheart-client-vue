@@ -8,7 +8,7 @@ export default {
     resetAlert(state){
         state.alert.showAlert = false
         state.alert.message = ""
-        state.alert.type = ""
+        state.alert.type = "warning"
     },
 
     errorAlert(state, errorMessage){

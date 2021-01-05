@@ -1,13 +1,5 @@
 export default [
     { 
-      path: '/',
-      name: 'landing-page',    
-      component: () => import("@/views/LandingPage"),
-      meta:{
-        title: "MediHeart. Your health in your hands"
-      }
-    },
-    { 
       path: '/login',
       name: 'login',    
       component: () => import("@/views/Login"),
@@ -60,11 +52,19 @@ export default [
       }
     },
     { 
-      path: '*',
+      path: '/user/*',
+      name: 'user-page-not-found',    
+      component: () => import("@/views/UserPageNotFound"),
+      meta: { 
+        title: "404 - Page not found"
+      } 
+    },
+    { 
+      path: '/*',
       name: 'page-not-found',    
       component: () => import("@/views/PageNotFound"),
       meta: { 
-        title: "Page not found"
+        title: "404 - Page not found"
       } 
     }
 
