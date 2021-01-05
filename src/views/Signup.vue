@@ -96,7 +96,7 @@
         align="center"
         justify="center"
       >                
-        <v-col cols="12" class="text-center">    
+        <v-col cols="12" class="text-center mt-4 mb-2">    
             {{$t('Signup.haveAlreadyAccount')}}               
           <router-link class="font-weight-bold" :to="'login'">{{$t('Signup.loginLink')}}  </router-link>
         </v-col>
