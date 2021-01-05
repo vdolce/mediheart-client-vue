@@ -6,7 +6,7 @@
     <NavBar v-if="!showLandingPageToolbar() && !notFoundPage()"/>
  
     <!-- CONTENT USER PAGE -->
-    <v-content class="custom-container mt-12">
+    <v-main class="custom-container mt-5">
       <v-container class="custom-container">
         <Alert/>
 
@@ -21,7 +21,7 @@
           </v-col>
         </v-row>
       </v-container>
-    </v-content>
+    </v-main>
 
     <!-- FOOTER -->
     <Footer v-if="!showLandingPageToolbar() && !notFoundPage()"/>
@@ -42,10 +42,6 @@ import Alert from './components/Alert'
       NavBar,     
       Footer,
       Alert,
-    },
-
-    props: {
-      source: String,
     },
 
     methods:{
