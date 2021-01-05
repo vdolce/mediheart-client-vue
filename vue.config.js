@@ -7,7 +7,7 @@ module.exports = {
     proxy: {
       "/api": {
         // target: "http://192.168.8.101:8000",
-        target: "http://localhost:8000",
+        target: `${process.env.VUE_APP_DEV_SERVER}` == 'undefined' || `${process.env.VUE_APP_DEV_SERVER}` == '' ? 'http://localhost:8000' : `${process.env.VUE_APP_DEV_SERVER}`,
         timeout: 6000,
         secure: false,
         ws:true,
