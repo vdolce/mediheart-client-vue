@@ -6,8 +6,8 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    # volumes:
-    #   - ./:/app
+    volumes:
+      - ./:/app_2/
     ports:
       - 8080:8080
     # env_file:
