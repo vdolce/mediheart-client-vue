@@ -10,7 +10,7 @@ export default {
         formData.append('new_password1', state.form.newPassword1)
         formData.append('new_password2', state.form.newPassword2)
 
-        await axios.post('/changePassword/', formData)
+        await axios.post('/changePassword', formData)
         .then(response => {
             
             // go to user-settings

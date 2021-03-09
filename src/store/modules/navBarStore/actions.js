@@ -4,7 +4,7 @@ import {router} from '../../../main'
 export default{
 
     async logout(){ 
-        await axios.get('/logout', { handlerEnabled: false })
+        await axios.get('/logout/', { handlerEnabled: false })
             .then(response => {
                 // go to personal-info state
                 if(response.status == 200){
