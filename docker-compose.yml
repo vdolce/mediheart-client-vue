@@ -10,5 +10,7 @@ services:
       - .:/app/
     ports:
       - 8080:8080
+    environment: 
+      - VUE_APP_API_URL=http://localhost:8000/api
     # env_file:
     #   - ./env/dev/.env

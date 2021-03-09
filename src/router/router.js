@@ -1,13 +1,5 @@
 export default [
   {
-    path: "/landing",
-    name: "landing",
-    component: () => import("@/views/LandingPage"),
-    meta: {
-      title: "landing",
-    },
-  },
-  {
     path: "/login",
     name: "login",
     component: () => import("@/views/Login"),
