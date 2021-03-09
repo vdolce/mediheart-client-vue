@@ -3,7 +3,8 @@ import {store} from '../store/store.js'
 
 // se aggiungo 'Access-Control-Allow-Origin': '*' mi da errore di CORS policy
 const axiosInstance = axios.create({
-  baseURL: `${process.env.VUE_APP_API_URL}` == 'undefined' || `${process.env.VUE_APP_API_URL}` == '' ? 'api' : `${process.env.VUE_APP_API_URL}`,
+  //baseURL: `${process.env.VUE_APP_API_URL}` == 'undefined' || `${process.env.VUE_APP_API_URL}` == '' ? 'api' : `${process.env.VUE_APP_API_URL}`,
+  baseURL: "http://localhost:8000/api",
   timeout: 1000,
   headers: {
     'Accept': 'application/json',

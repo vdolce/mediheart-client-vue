@@ -10,8 +10,8 @@ services:
       - .:/app/
     ports:
       - 8080:8080
-    environment:
-      - VUE_APP_DEV_SERVER=server
+    # environment:
+    #   # - VUE_APP_DEV_SERVER=server
   server:
     image: mediheart-server_server:latest
     ports:
