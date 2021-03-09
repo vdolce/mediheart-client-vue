@@ -5,7 +5,7 @@ import {router} from '../../../main'
 export default {
     async getFormData({commit}){ 
         const patientId = localStorage.getItem('patientId')
-        await axios.get(`/personalInfo/modify/${patientId}`, { handlerEnabled: false })
+        await axios.get(`/personalInfo/modify/${patientId}/`)
             .then(response => {
                 // go to personal-info state
                 if(response.status == 200)
@@ -23,7 +23,7 @@ export default {
             data: state.form.personalInfo
         }
         const patientId = localStorage.getItem('patientId')
-        await axios.put(`/personalInfo/${patientId}`, request.data)
+        await axios.put(`/personalInfo/${patientId}/`, request.data)
             .then(response => {
                 console.log('Api personalInfo - PUT')
                 console.log(response)
