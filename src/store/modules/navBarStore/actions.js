@@ -12,6 +12,9 @@ export default{
                     localStorage.removeItem('token')
                     localStorage.removeItem('email')
                     router.push({name:'login'})
+
+                    // reset all status reloading the page
+                    window.location.reload()
                 }
                     
             })
