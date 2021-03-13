@@ -9,4 +9,8 @@ export default {
         commit('resetAlert')
     },
 
+    activeErrorAlert({commit}, message){
+        commit('errorAlert', message)
+    }
+
 }

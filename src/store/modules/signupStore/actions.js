@@ -1,10 +1,10 @@
 import axios from '../../../plugins/axios'
 import {router} from '../../../main'
-
+import i18n from './../../../plugins/i18n'
 
 export default {
     // signup user
-    async signupUser({state, commit}){ 
+    async signupUser({state, commit, dispatch}){ 
         const formData = new FormData();
         formData.append('username', state.form.username)
         formData.append('password1', state.form.password1)
@@ -33,6 +33,8 @@ export default {
                 }
             })
         }
+        else
+            dispatch('activeErrorAlert',  i18n.t('Signup.termsConditionsError'))
     },
 
 }

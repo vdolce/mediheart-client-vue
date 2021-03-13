@@ -68,7 +68,8 @@
       },
       "password":"with at least one capital letter, a number and a special character",
       "confirmationPassword":"Password must match"
-    }
+    },
+    "termsConditionsError":"You must accept the terms and conditions to sign up"
   },
 
   "UserHomepage":{
