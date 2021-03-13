@@ -78,7 +78,7 @@
         <v-col cols="8" class="py-0 px-0" >    
             <v-btn 
               color="secondary"
-              @click="form.termsConditions ? $store.dispatch('signupUser') : ''"
+              @click="$store.dispatch('signupUser')"
               rounded 
               depressed 
               large 

@@ -16,7 +16,7 @@ const axiosInstance = axios.create({
 // Add a REQUEST interceptor
 axiosInstance.interceptors.request.use(function (config) {
   console.log('interceptor - REQUEST OK')
-  store.commit('startProgress')
+  store.dispatch('activeStartProgress')
 
   console.log(config.headers)
   // attach token to header request if needed (always except for login and signup)
@@ -33,7 +33,7 @@ axiosInstance.interceptors.request.use(function (config) {
 // Add a RESPONSE interceptor
 axiosInstance.interceptors.response.use(function (response) {
   console.log('interceptor - RESPONSE OK')
-  store.commit('finishProgress')
+  store.dispatch('activeFinishProgress')
   return response;
   
 }, function (error) {
@@ -41,10 +41,10 @@ axiosInstance.interceptors.response.use(function (response) {
   console.log('interceptor - response KO')  
   
   // finish loader progress
-  store.commit('finishProgress')
+  store.dispatch('activeFinishProgress')
   
   // show error alert 
-  store.commit('errorAlert', error)
+  store.dispatch('activeErrorAlert', error)
   return Promise.reject(error);
 });
 
