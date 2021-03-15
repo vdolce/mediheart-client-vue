@@ -7,7 +7,7 @@
       >      
         <v-col cols="12" class="pt-0 pb-0 card-container">
           <v-card            
-            class="pl-0 pr-0 mt-0 pt-0 mb-8 pb-0 container fixed-container"                        
+            class="pl-0 pr-0 mt-0 pt-0 mb-5 pb-0 container fixed-container"                        
             flat
             max-width="750px"
           >
