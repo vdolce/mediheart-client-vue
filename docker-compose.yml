@@ -3,14 +3,11 @@ version: '3.7'
 services:
 
   client:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+    image: mediheartclient:1.0.1
+    container_name: mediheart-client
     volumes:
       - .:/app/
     ports:
       - 8080:8080
     environment: 
       - VUE_APP_API_URL=http://localhost:8000/api
-    # env_file:
-    #   - ./env/dev/.env
