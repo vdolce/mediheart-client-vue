@@ -9,7 +9,7 @@ Check it out **[Mediheart Demo](https://mediheart.netlify.app/)**
 
 ## Information
 
-The app is developed with Vue JS using the following technologies:
+The client is developed with Vue JS using the following technologies:
 
 - **axios js**: for HTTP request, promises, interceptors
 - **vuex**: state management library with a centralized store for all modules/components
@@ -17,10 +17,10 @@ The app is developed with Vue JS using the following technologies:
 - **Vuetify Js** as Material Design Framework
 - **vue-i18n** as internationalization plugin
 
+The frontend is **Dockerized** and deployed on **Netifly**.
 
-The frontend is also **Dockerized**
+Take a look at the **[Backend Mediheart Repo](https://github.com/gppmad/mediheart-server)**
 
-The app is deployed on **Netifly**.
 
 ## Usage
 
