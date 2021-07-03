@@ -131,5 +131,12 @@
   "DialogBox":{
     "warning": "Warning",
     "question":"Are you sure you want to delete the section "
+  },
+
+  "DeleteAccount":{
+    "title": "Delete account",
+    "info1":"You’re about to start the process of deleting your Mediheart account.",
+    "info2":"Once you delete your account, there is no going back. Please be certain.",
+    "action":"Delete Account"
   }
 }

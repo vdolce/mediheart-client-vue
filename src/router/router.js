@@ -34,6 +34,15 @@ export default [
     },
   },
   {
+    path: "/user/settings/delete-account",
+    name: "delete-account",
+    component: () => import("@/views/DeleteAccount"),
+    meta: {
+      requiresAuth: true,
+      title: "DeleteAccount",
+    },
+  },
+  {
     path: "/user/personal-info",
     name: "personal-info",
     component: () => import("@/views/PersonalInfo"),
