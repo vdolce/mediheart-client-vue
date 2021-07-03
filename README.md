@@ -6,6 +6,7 @@ This repo is the final version of the Mediheart client:
 
 Check it out **[Mediheart Demo](https://mediheart.netlify.app/)**
 
+![alt text](https://github.com/vdolce/mediheart-landing-page/blob/main/src/assets/img/personal-info-demo.png)
 
 ## Information
 
