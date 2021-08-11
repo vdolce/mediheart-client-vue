@@ -99,8 +99,6 @@ export default {
   mounted(){
     this.$store.dispatch('getPatientData')
   },
-
-
   
 }
 </script>

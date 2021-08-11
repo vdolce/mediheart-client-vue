@@ -1,6 +1,6 @@
 export default {
     form:{
-        username:"",
-        password:""
+        username:"new_login_test",
+        password:"6Hrwu_xr6ViyFmE"
     }
 }

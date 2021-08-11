@@ -19,8 +19,8 @@ axiosInstance.interceptors.request.use(function (config) {
   store.dispatch('activeStartProgress')
 
   console.log(config.headers)
-  // attach token to header request if needed (always except for login and signup)
-  if(config.url != '/login/' && config.url != '/signup/'){
+  //attach token to header request if needed (always except for login and signup)
+  if(config.url != '/auth/api-token-auth/' && config.url != '/auth/signup/'){
     const token = localStorage.getItem("token")
     config.headers.Authorization =  "Token " + token;
   }
@@ -38,7 +38,7 @@ axiosInstance.interceptors.response.use(function (response) {
   
 }, function (error) {
   // Do something with response error
-  console.log('interceptor - response KO')  
+  console.log('interceptor - RESPONSE KO')  
   
   // finish loader progress
   store.dispatch('activeFinishProgress')

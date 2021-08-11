@@ -43,6 +43,15 @@ export default [
     },
   },
   {
+    path: "/user/no-patient",
+    name: "no-patient",
+    component: () => import("@/views/NoPatient"),
+    meta: {
+      //requiresAuth: true,
+      title: "No Patient View",
+    },
+  },
+  {
     path: "/user/personal-info/modify",
     name: "personal-info-modify",
     component: () => import("@/views/PersonalInfoModify"),
