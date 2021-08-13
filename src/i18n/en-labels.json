@@ -107,6 +107,22 @@
     }
   },
 
+  "NoPatient":{
+    "Welcome" : "Welcome to MediHeart !",
+    "WelcomeSubTitle": "Tell us something more about you ",
+    "title": "Personal Info",
+    "subtitle": "Modify your personal data",
+    "firstname": "What's your name ? ",
+    "lastname": "Lastname",
+    "birthDate": "Birth date",
+    "gender":"Gender",
+    "bloodType": "Blood Type",
+    "rules": {
+      "minLength":"Minimun two characters",
+      "onlyLetters": "Only letters accepted"
+    }
+  },
+
   "Settings":{
     "title": "Settings",
     "subtitle": "Manage your account",

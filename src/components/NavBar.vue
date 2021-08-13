@@ -12,7 +12,7 @@
       <v-spacer></v-spacer>
      
       <!-- NOTIFICATIONS -->
-      <v-tooltip bottom>
+      <!-- <v-tooltip bottom>
         <template v-slot:activator="{ on }">
           <v-btn icon v-on="on" >
             <v-badge color="secondary" content="1" overlap>
@@ -21,7 +21,7 @@
             </v-btn>
         </template>
         <span>Notifications</span>
-      </v-tooltip>
+      </v-tooltip> -->
 
       <!-- PROFILE -->
       <v-menu offset-y left>
