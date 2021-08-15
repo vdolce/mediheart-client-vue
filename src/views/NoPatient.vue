@@ -9,11 +9,13 @@
   >
     <v-card-title>
       <v-icon large left> mdi-clipboard-account-outline </v-icon>
-      <span class="text-h6 font-weight-light">{{ $t('NoPatient.Welcome') }}</span>
+      <span class="text-h6 font-weight-light">{{
+        $t("NoPatient.Welcome")
+      }}</span>
     </v-card-title>
 
     <v-card-text class="text-h6">
-      {{ $t('NoPatient.WelcomeSubTitle') }} <br />
+      {{ $t("NoPatient.WelcomeSubTitle") }} <br />
     </v-card-text>
 
     <!-- <v-card-actions class="mt-6 mb-4 justify-center">
@@ -93,7 +95,6 @@
           ></v-select>
         </v-col>
       </v-row>
-
     </v-form>
 
     <v-card-actions class="mb-2">
@@ -101,7 +102,7 @@
       <v-btn
         color="secondary"
         class="mr-2"
-        disabled
+        :disabled="!isComplete"
         @click="$store.dispatch('updatePersonalInfo')"
       >
         {{ $t("Common.confirm") }}
@@ -140,6 +141,16 @@ export default {
       )
         formData.personalInfo.birthDate = this.getTodayDate();
       return formData;
+    },
+
+    isComplete() {
+      var formData = this.$store.state.noPatientStore.form_add_first_patient;
+      return (
+        formData.personalInfo.firstname &&
+        formData.personalInfo.bloodType &&
+        formData.personalInfo.gender &&
+        formData.personalInfo.birthDate
+      );
     },
   },
 
