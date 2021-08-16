@@ -7,7 +7,7 @@ export default {
     
     var request = state.form;
     console.log("printing username and pass:" + request.username + " " + request.password);
-
+    
     await axios.post("/auth/api-token-auth/", request).then((response) => {
       // go to personal-info
       if (response.status == 200) {

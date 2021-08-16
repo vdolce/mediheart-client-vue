@@ -43,12 +43,12 @@ export default [
     },
   },
   {
-    path: "/user/no-patient",
-    name: "no-patient",
-    component: () => import("@/views/NoPatient"),
+    path: "/user/first-login",
+    name: "first-login",
+    component: () => import("@/views/FirstLogin"),
     meta: {
-      //requiresAuth: true,
-      title: "No Patient View",
+      requiresAuth: true,
+      title: "First Login View",
     },
   },
   {

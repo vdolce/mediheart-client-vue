@@ -107,7 +107,7 @@
     }
   },
 
-  "NoPatient":{
+  "firstLogin":{
     "Welcome" : "Welcome to MediHeart !",
     "WelcomeSubTitle": "Tell us something more about you ",
     "title": "Personal Info",

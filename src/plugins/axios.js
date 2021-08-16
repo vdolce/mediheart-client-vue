@@ -19,6 +19,7 @@ axiosInstance.interceptors.request.use(function (config) {
   store.dispatch('activeStartProgress')
 
   console.log(config.headers)
+  
   //attach token to header request if needed (always except for login and signup)
   if(config.url != '/auth/api-token-auth/' && config.url != '/auth/signup/'){
     const token = localStorage.getItem("token")

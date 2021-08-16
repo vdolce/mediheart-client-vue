@@ -10,25 +10,19 @@
     <v-card-title>
       <v-icon large left> mdi-clipboard-account-outline </v-icon>
       <span class="text-h6 font-weight-light">{{
-        $t("NoPatient.Welcome")
+        $t("firstLogin.Welcome")
       }}</span>
     </v-card-title>
 
     <v-card-text class="text-h6">
-      {{ $t("NoPatient.WelcomeSubTitle") }} <br />
+      {{ $t("firstLogin.WelcomeSubTitle") }} <br />
     </v-card-text>
-
-    <!-- <v-card-actions class="mt-6 mb-4 justify-center">
-      <v-btn class="mx-2" fab dark medium color="secondary">
-        <v-icon dark> mdi-plus </v-icon>
-      </v-btn>
-    </v-card-actions> -->
 
     <v-form ref="form" v-model="valid" lazy-validation class="pl-4 pr-4">
       <!-- firstname -->
       <v-text-field
         v-model="form.personalInfo.firstname"
-        v-bind:label="$t('NoPatient.firstname')"
+        v-bind:label="$t('firstLogin.firstname')"
         required
         outlined
       ></v-text-field>
@@ -39,7 +33,7 @@
         :items="form.genderList"
         item-text="label"
         item-value="id"
-        v-bind:label="$t('NoPatient.gender')"
+        v-bind:label="$t('firstLogin.gender')"
         required
         outlined
         hide-details
@@ -59,7 +53,7 @@
           >
             <template v-slot:activator="{ on, attrs }">
               <v-text-field
-                v-model="form.personalInfo.birthDate"
+                v-model="form.personalInfo.birth_date"
                 v-bind:label="$t('PersonalInfoModify.birthDate')"
                 v-bind="attrs"
                 readonly
@@ -70,7 +64,7 @@
               ></v-text-field>
             </template>
             <v-date-picker
-              v-model="form.personalInfo.birthDate"
+              v-model="form.personalInfo.birth_date"
               min="1900-01-01"
               :max="getTodayDate()"
               header-color="primary"
@@ -83,7 +77,7 @@
 
         <v-col cols="12" md="6" sm="12">
           <v-select
-            v-model="form.personalInfo.bloodType"
+            v-model="form.personalInfo.blood_type"
             :items="form.bloodTypeList"
             item-text="label"
             item-value="id"
@@ -103,7 +97,7 @@
         color="secondary"
         class="mr-2"
         :disabled="!isComplete"
-        @click="$store.dispatch('updatePersonalInfo')"
+        @click="$store.dispatch('createPatient')"
       >
         {{ $t("Common.confirm") }}
       </v-btn>
@@ -113,7 +107,7 @@
 
 <script>
 export default {
-  name: "NoPatient",
+  name: "FirstLogin",
 
   data() {
     return {
@@ -122,40 +116,40 @@ export default {
       nameRules: [
         (v) =>
           v
-            ? v.length > 2 || this.$t("PersonalInfoModify.rules.minLength")
+            ? v.length > 2 || this.$t("firstLogin.rules.minLength")
             : "",
         (v) =>
           /^[aA-zZàèéìòù ']{2,30}$/.test(v) ||
-          this.$t("PersonalInfoModify.rules.onlyLetters"),
+          this.$t("firstLogin.rules.onlyLetters"),
       ],
     };
   },
 
   computed: {
     form() {
-      var formData = this.$store.state.noPatientStore.form_add_first_patient;
+      var formData = this.$store.state.firstLoginStore.form_add_first_patient;
       // initialize the birthDate calendar
       if (
-        formData.personalInfo.birthDate == "" ||
-        formData.personalInfo.birthDate == undefined
+        formData.personalInfo.birth_date == "" ||
+        formData.personalInfo.birth_date == undefined
       )
-        formData.personalInfo.birthDate = this.getTodayDate();
+        formData.personalInfo.birth_date = this.getTodayDate();
       return formData;
     },
 
     isComplete() {
-      var formData = this.$store.state.noPatientStore.form_add_first_patient;
+      var formData = this.$store.state.firstLoginStore.form_add_first_patient;
       return (
         formData.personalInfo.firstname &&
-        formData.personalInfo.bloodType &&
+        formData.personalInfo.blood_type &&
         formData.personalInfo.gender &&
-        formData.personalInfo.birthDate
+        formData.personalInfo.birth_date
       );
     },
   },
 
   mounted() {
-    this.$store.dispatch("getFormData2");
+    this.$store.dispatch("prepareForm");
   },
 
   methods: {

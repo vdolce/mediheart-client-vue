@@ -7,7 +7,7 @@ import loginStore from  "./modules/loginStore/index";
 import signupStore from  "./modules/signupStore/index";
 import changePasswordStore from  "./modules/changePasswordStore/index";
 import personalInfoModifyStore from  "./modules/personalInfoModifyStore/index";
-import noPatientStore from  "./modules/noPatientStore/index";
+import firstLoginStore from  "./modules/firstLoginStore/index";
 
 // COMPONENTS
 import alertStore from  "./modules/alertStore/index";
@@ -25,7 +25,7 @@ export const store = new Vuex.Store({
     loginStore: loginStore,
     signupStore: signupStore,
     changePasswordStore: changePasswordStore,
-    noPatientStore: noPatientStore,
+    firstLoginStore: firstLoginStore,
 
     // COMPONENTS
     alertStore: alertStore,
