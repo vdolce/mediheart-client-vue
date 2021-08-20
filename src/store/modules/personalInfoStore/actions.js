@@ -1,4 +1,5 @@
 import axios from '../../../plugins/axios'
+
 export default {
     async getPatientData({commit}){ 
         const patientId = localStorage.getItem('patientId')

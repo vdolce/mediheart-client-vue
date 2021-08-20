@@ -21,7 +21,7 @@ axiosInstance.interceptors.request.use(function (config) {
   console.log(config.headers)
   
   //attach token to header request if needed (always except for login and signup)
-  if(config.url != '/auth/api-token-auth/' && config.url != '/auth/signup/'){
+  if(config.url != '/auth/login/' && config.url != '/auth/signup/'){
     const token = localStorage.getItem("token")
     config.headers.Authorization =  "Token " + token;
   }

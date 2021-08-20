@@ -1,5 +1,5 @@
 import axios from "../../../plugins/axios";
-// import {router} from '../../../main'
+import {router} from '../../../main'
 
 export default {
   async prepareForm({ commit }) {
@@ -14,10 +14,13 @@ export default {
 
   async createPatient({state, commit}) {
 
+    var form_data = state.form_add_first_patient.personalInfo;
+    form_data["fk_user"] = localStorage.getItem("user_id");
+
     var request = {
-      data: state.form_add_first_patient.personalInfo,
+      data: form_data,
     };
-    
+
     await axios
       .post(`/patients/`, request.data)
       .then((response) => {
@@ -25,9 +28,9 @@ export default {
         console.log(response);
 
         // go to personal-info state
-        if (response.status == 200) {
+        if (response.status >= 200) {
           console.log("going to personal-info");
-          // router.push({ name: "personal-info" });
+          router.push({ name: "personal-info" });
         }
         // show success alert
         if (response.data.message) commit("showAlert", response.data.message);

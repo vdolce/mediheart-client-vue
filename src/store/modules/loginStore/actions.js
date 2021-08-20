@@ -4,11 +4,12 @@ import { router } from "../../../main";
 export default {
   // login user
   async loginUser({ state, commit }) {
-    
     var request = state.form;
-    console.log("printing username and pass:" + request.username + " " + request.password);
-    
-    await axios.post("/auth/api-token-auth/", request).then((response) => {
+    console.log(
+      "printing username and pass:" + request.username + " " + request.password
+    );
+
+    await axios.post("/auth/login/", request).then((response) => {
       // go to personal-info
       if (response.status == 200) {
         console.log("Api login - POST");
@@ -19,13 +20,17 @@ export default {
 
         // store session token
         localStorage.setItem("token", response.data.token);
-        // localStorage.setItem("patientId", response.data.patientId);
-        // localStorage.setItem("email", response.data.username);
+        localStorage.setItem("user_id", response.data.user_id);
+        localStorage.setItem("is_first_login", response.data.is_first_login);
         console.log(localStorage);
 
-        // go to personal-info
+        // Go the next page
         console.log("go to personal-info");
-        router.push({ name: "personal-info" });
+
+        if (response.data.is_first_login)
+          router.push({ name: "first-login" });
+        else 
+          router.push({ name: "personal-info" });
       }
     });
   },
