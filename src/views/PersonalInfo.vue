@@ -24,10 +24,6 @@
                 <td><p class="mb-0 element-table">{{ personalInfo.firstname}}</p></td>                
               </tr>
               <tr>
-                <td v-bind:class="[{'first-table-column-sm': $vuetify.breakpoint.smAndDown, 'first-table-column-md': $vuetify.breakpoint.mdAndUp}]"><p class="text-uppercase mb-0 header-table">{{ headers[1].label}}</p></td>
-                <td><p class="mb-0 element-table">{{ personalInfo.lastname}}</p></td>                
-              </tr>
-              <tr>
                 <td v-bind:class="[{'first-table-column-sm': $vuetify.breakpoint.smAndDown, 'first-table-column-md': $vuetify.breakpoint.mdAndUp}]"><p class="text-uppercase mb-0 header-table">{{ headers[2].label}}</p></td>
                 <td><p class="mb-0 element-table">{{personalInfo.age}}</p></td>                
               </tr>
@@ -41,8 +37,8 @@
       </v-col>
       <v-col cols="4" class="mt-2 pb-0 text-center">
         <h3 class="bloodtype-style">{{ headers[4].label}}</h3>
-        <h2 class="bloodtype-style2 mt-3" v-if="personalInfo.bloodType">{{ personalInfo.bloodType}}</h2>
-        <h2 class="bloodtype-style2 mt-3" v-if="personalInfo.bloodType == undefined || !personalInfo.bloodType">--</h2>
+        <h2 class="bloodtype-style2 mt-3" v-if="personalInfo.blood_type">{{ personalInfo.blood_type}}</h2>
+        <h2 class="bloodtype-style2 mt-3" v-if="personalInfo.blood_type == undefined || !personalInfo.blood_type">--</h2>
       </v-col>
     </v-row>
 
@@ -93,7 +89,7 @@ export default {
 
   computed:{
     personalInfo() {
-      return this.$store.state.personaInfoStore.personalInfo;
+      return this.$store.state.personaInfoStore.form_personal_info.personalInfo;
     }
   },
   mounted(){

@@ -7,7 +7,7 @@ export default {
       // go to personal-info state
       if (response.status == 200) commit("setUtilityFields", response.data);
 
-      console.log("Api personalInfo/modify - GET");
+      console.log("Api first login - GET");
       console.log(response);
     });
   },

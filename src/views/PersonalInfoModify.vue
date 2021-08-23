@@ -26,17 +26,9 @@
         outlined
       ></v-text-field>
 
-      <v-text-field
-        v-model="form.personalInfo.lastname"
-        :rules="nameRules"
-        v-bind:label="$t('PersonalInfoModify.lastname')"
-        required
-        outlined
-      ></v-text-field>
-
       <v-select
         v-model="form.personalInfo.gender"
-        :items="form.genderList"
+        :items="form.gender_list"
         item-text="label"
         item-value="id"
         v-bind:label="$t('PersonalInfoModify.gender')"
@@ -58,7 +50,7 @@
           >
             <template v-slot:activator="{ on, attrs }">
               <v-text-field
-                v-model="form.personalInfo.birthDate"
+                v-model="form.personalInfo.birth_date"
                 v-bind:label="$t('PersonalInfoModify.birthDate')"
                 v-bind="attrs"
                 readonly
@@ -69,7 +61,7 @@
               ></v-text-field>
             </template>
             <v-date-picker
-              v-model="form.personalInfo.birthDate"
+              v-model="form.personalInfo.birth_date"
               min="1900-01-01"
               :max="getTodayDate()"
               header-color="primary"
@@ -82,8 +74,8 @@
 
         <v-col cols="12" md="6" sm="12">
           <v-select
-            v-model="form.personalInfo.bloodType"
-            :items="form.bloodTypeList"
+            v-model="form.personalInfo.blood_type"
+            :items="form.blood_type_list"
             item-text="label"
             item-value="id"
             v-bind:label="$t('PersonalInfoModify.bloodType')"
@@ -110,6 +102,7 @@
       <v-btn
         color="secondary"
         class="mr-2"
+        :disabled="!isComplete"
         @click="$store.dispatch('updatePersonalInfo')"
       >
         {{ $t("Common.confirm") }}
@@ -136,19 +129,31 @@ export default {
 
   computed: {
     form() {
-      var formData = this.$store.state.personalInfoModifyStore.form;
+      var formData = this.$store.state.personalInfoModifyStore.form_pi_modify;
       // initialize the birthDate calendar
       if (
-        formData.personalInfo.birthDate == "" ||
-        formData.personalInfo.birthDate == undefined
+        formData.personalInfo.birth_date == "" ||
+        formData.personalInfo.birth_date == undefined
       )
-        formData.personalInfo.birthDate = this.getTodayDate();
+        formData.personalInfo.birth_date = this.getTodayDate();
       return formData;
     },
+
+    isComplete() {
+      var formData = this.$store.state.personalInfoModifyStore.form_pi_modify;
+
+      return (
+        formData.personalInfo.firstname &&
+        formData.personalInfo.blood_type &&
+        formData.personalInfo.gender &&
+        formData.personalInfo.birth_date
+      );
+    },
+
   },
 
   mounted() {
-    this.$store.dispatch("getFormData");
+    this.$store.dispatch("prepareForm");
   },
 
   methods: {
