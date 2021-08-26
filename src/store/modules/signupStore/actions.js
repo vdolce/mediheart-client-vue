@@ -11,7 +11,7 @@ export default {
         formData.append('password2', state.form.password2)
 
         if(state.form.termsConditions){
-            await axios.post('/signup/', formData)
+            await axios.post('/auth/signup/', formData)
             .then(response => {
                 
                 // go to personal-info
@@ -23,13 +23,12 @@ export default {
                     commit('resetSignupForm')
         
                     // store session token
-                    localStorage.setItem('token', response.data.token)
-                    localStorage.setItem('patientId', response.data.patientId)
-                    localStorage.setItem('email', response.data.username)
+                    localStorage.setItem('token', response.data.token);
+                    localStorage.setItem('email', response.data.username);
 
                     // go to personal info
-                    console.log('go to personal-info')
-                    router.push({name:'personal-info'})
+                    console.log('go to first-login');
+                    router.push({name:'first-login'})
                 }
             })
         }

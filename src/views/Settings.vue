@@ -42,7 +42,7 @@ export default {
   data: () => ({
     sections:[
       { description: "Change your password", icon:'key-variant', destination:'change-password'},
-      { description: "Delete your account", icon:'trash-can-outline', destination:'delete-account'},
+      // { description: "Delete your account", icon:'trash-can-outline', destination:'delete-account'},
     ]
   })
 }
