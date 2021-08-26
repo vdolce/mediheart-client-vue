@@ -5,8 +5,8 @@
         <router-link :to="{ name: 'personal-info' }" key="home">
           <v-img
             :src="require('@/assets/img/white_logo.png')"
-            width="220"
-            height="55"
+            width="180"
+            height="45"
             class="ml-2"
           ></v-img>
         </router-link>
@@ -41,18 +41,16 @@
         <v-card>
           <v-list>
             <v-list-item>
-              <v-list-item-avatar>
-                <v-avatar color="secondary">
-                  <span class="white--text">U</span>
-                </v-avatar>
-              </v-list-item-avatar>
+              <v-list-item-action>
+                <v-icon color="secondary">mdi-account-circle</v-icon>
+              </v-list-item-action>
 
               <v-list-item-content>
                 <v-list-item-title>User</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list>
-          
+
           <v-divider></v-divider>
 
           <v-list>
