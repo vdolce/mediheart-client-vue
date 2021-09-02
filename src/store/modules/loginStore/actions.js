@@ -21,6 +21,7 @@ export default {
         // store session token
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("user_id", response.data.user_id);
+        localStorage.setItem("username", response.data.username);
         localStorage.setItem("is_first_login", response.data.is_first_login);
         console.log(localStorage);
 

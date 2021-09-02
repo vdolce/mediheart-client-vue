@@ -129,7 +129,9 @@
     "sections":{
       "changePassword": "Change your password",
       "deleteAccount": "Delete your account"
-    }
+    },
+    "test_account_alert":"You are logged in as test account. Please signup to try these features !"
+
   },
 
   "ChangePassword": {

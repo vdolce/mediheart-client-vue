@@ -7,16 +7,20 @@
     elevation="1"
     max-width="750px"
   >
-    <v-card-title>
-      <v-icon large left> mdi-clipboard-account-outline </v-icon>
-      <span class="text-h6 font-weight-light">{{
-        $t("firstLogin.Welcome")
-      }}</span>
-    </v-card-title>
 
-    <v-card-text class="text-h6">
-      {{ $t("firstLogin.WelcomeSubTitle") }} <br />
-    </v-card-text>
+    <v-list-item three-line>
+      <v-list-item-content>
+        <v-list-item-title class="custom-title">
+          <v-icon large left> mdi-clipboard-account-outline </v-icon>
+          {{
+            $t("firstLogin.Welcome")
+          }}
+        </v-list-item-title>
+        <v-list-item-subtitle class="mb-4">
+          {{ $t("firstLogin.WelcomeSubTitle") }}
+        </v-list-item-subtitle>
+      </v-list-item-content>
+    </v-list-item>
 
     <v-form ref="form" v-model="valid" lazy-validation class="pl-4 pr-4">
       <!-- firstname -->
@@ -114,10 +118,7 @@ export default {
       birthDateMenu: false,
       valid: false,
       nameRules: [
-        (v) =>
-          v
-            ? v.length > 2 || this.$t("firstLogin.rules.minLength")
-            : "",
+        (v) => (v ? v.length > 2 || this.$t("firstLogin.rules.minLength") : ""),
         (v) =>
           /^[aA-zZàèéìòù ']{2,30}$/.test(v) ||
           this.$t("firstLogin.rules.onlyLetters"),
@@ -149,7 +150,7 @@ export default {
   },
 
   mounted() {
-    this.$store.dispatch("prepareForm");
+    this.$store.dispatch('prepareForm')
   },
 
   methods: {
