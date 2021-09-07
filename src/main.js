@@ -14,7 +14,10 @@ Vue.config.productionTip = false
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
+  mode: 'history',
+  hash: false,
   routes: Routes
+
 });
 
 router.beforeEach((to, from, next) => {

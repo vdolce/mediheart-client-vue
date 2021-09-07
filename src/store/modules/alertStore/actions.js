@@ -11,6 +11,10 @@ export default {
 
     activeErrorAlert({commit}, message){
         commit('errorAlert', message)
-    }
+    },
 
+    activeInfoAlert({commit}, message){
+        commit('infoAlert', message)
+    }
+            
 }

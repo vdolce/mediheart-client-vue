@@ -1,9 +1,9 @@
 export default {
-    form_pi_modify:{
-        gender_list:[],
-        blood_type_list:[],
+    form_add_first_patient:{
+        genderList:[],
+        bloodTypeList:[],
         personalInfo:{
-            firstname:"",      
+            firstname:"",        
             blood_type:null,
             gender:"",
             birth_date:""

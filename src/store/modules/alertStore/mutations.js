@@ -17,4 +17,10 @@ export default {
         state.alert.type = "error"
     },
 
+    infoAlert(state, infoMessage){
+        state.alert.showAlert = true
+        state.alert.message = infoMessage
+        state.alert.type = "info"
+        state.alert.dismissible=false
+    },
 }
