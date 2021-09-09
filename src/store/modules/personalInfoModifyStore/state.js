@@ -4,7 +4,7 @@ export default {
         blood_type_list:[],
         personalInfo:{
             firstname:"",      
-            blood_type:null,
+            blood_type:{},
             gender:"",
             birth_date:""
         }

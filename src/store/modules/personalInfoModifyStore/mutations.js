@@ -3,7 +3,6 @@ export default {
     setSelectLists(state, payload){
         state.form_pi_modify.gender_list = payload.data.gender_list  
         state.form_pi_modify.blood_type_list = payload.data.blood_type_list
-        
     },
 
     setPersonalInfoModify(state, payload){

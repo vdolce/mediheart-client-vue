@@ -71,7 +71,6 @@
             ></v-date-picker>
           </v-menu>
         </v-col>
-
         <v-col cols="12" md="6" sm="12">
           <v-select
             v-model="form.personalInfo.blood_type"
@@ -81,6 +80,7 @@
             v-bind:label="$t('PersonalInfoModify.bloodType')"
             required
             outlined
+            return-object
             hide-details
             :menu-props="{ top: true, offsetY: true }"
           ></v-select>
@@ -124,6 +124,14 @@ export default {
         (v) =>/^[aA-zZàèéìòù ']{2,30}$/.test(v) ||
               this.$t("PersonalInfoModify.rules.onlyLetters"),
       ],
+      select: { state: 'Florida', abbr: 'FL' },
+        items: [
+          { state: 'Florida', abbr: 'FL' },
+          { state: 'Georgia', abbr: 'GA' },
+          { state: 'Nebraska', abbr: 'NE' },
+          { state: 'California', abbr: 'CA' },
+          { state: 'New York', abbr: 'NY' },
+        ],
     };
   },
 
