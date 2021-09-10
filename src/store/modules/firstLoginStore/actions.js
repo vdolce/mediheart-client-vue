@@ -2,7 +2,7 @@ import axios from "../../../plugins/axios";
 import {router} from '../../../main'
 
 export default {
-  async prepareForm({ commit }) {
+  async prepareFormFirstLogin({ commit }) {
     await axios.get(`/patients/prepare-form/`).then((response) => {
       // go to personal-info state
       if (response.status == 200) commit("setUtilityFields", response.data);

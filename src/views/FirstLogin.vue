@@ -150,7 +150,7 @@ export default {
   },
 
   mounted() {
-    this.$store.dispatch('prepareForm')
+    this.$store.dispatch('prepareFormFirstLogin')
   },
 
   methods: {
