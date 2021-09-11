@@ -1,13 +1,12 @@
 export default {
-    form:{
-        genderList:[],
-        bloodTypeList:[],
+    form_pi_modify:{
+        gender_list:[],
+        blood_type_list:[],
         personalInfo:{
-            firstname:"",
-            lastname:"",        
-            bloodType:null,
+            firstname:"",      
+            blood_type:{},
             gender:"",
-            birthDate:""
+            birth_date:""
         }
     }
 }

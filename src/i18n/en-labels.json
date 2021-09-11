@@ -107,13 +107,31 @@
     }
   },
 
+  "firstLogin":{
+    "Welcome" : "Welcome to MediHeart !",
+    "WelcomeSubTitle": "Tell us something more about you ",
+    "title": "Personal Info",
+    "subtitle": "Modify your personal data",
+    "firstname": "What's your name ? ",
+    "lastname": "Lastname",
+    "birthDate": "Birth date",
+    "gender":"Gender",
+    "bloodType": "Blood Type",
+    "rules": {
+      "minLength":"Minimun two characters",
+      "onlyLetters": "Only letters accepted"
+    }
+  },
+
   "Settings":{
     "title": "Settings",
     "subtitle": "Manage your account",
     "sections":{
       "changePassword": "Change your password",
       "deleteAccount": "Delete your account"
-    }
+    },
+    "test_account_alert":"You are logged in as test account. Please signup to try these features !"
+
   },
 
   "ChangePassword": {

@@ -1,4 +1,5 @@
 <template>
+  <!-- Introduction Card -->
   <v-card
     class="pl-3 pr-3 mt-0 pt-0 mb-0 pb-0 container"
     flat
@@ -6,38 +7,44 @@
     elevation="1"
     max-width="750px"
   >
+
     <v-list-item three-line>
       <v-list-item-content>
-        <v-list-item-title class="custom-title">{{
-          $t("PersonalInfoModify.title")
-        }}</v-list-item-title>
-        <v-list-item-subtitle class="mb-4">{{
-          $t("PersonalInfoModify.subtitle")
-        }}</v-list-item-subtitle>
+        <v-list-item-title class="custom-title">
+          <v-icon large left> mdi-clipboard-account-outline </v-icon>
+          {{
+            $t("firstLogin.Welcome")
+          }}
+        </v-list-item-title>
+        <v-list-item-subtitle class="mb-4">
+          {{ $t("firstLogin.WelcomeSubTitle") }}
+        </v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
 
     <v-form ref="form" v-model="valid" lazy-validation class="pl-4 pr-4">
+      <!-- firstname -->
       <v-text-field
         v-model="form.personalInfo.firstname"
-        :rules="nameRules"
-        v-bind:label="$t('PersonalInfoModify.firstname')"
+        v-bind:label="$t('firstLogin.firstname')"
         required
         outlined
       ></v-text-field>
 
+      <!-- gender -->
       <v-select
         v-model="form.personalInfo.gender"
-        :items="form.gender_list"
+        :items="form.genderList"
         item-text="label"
         item-value="id"
-        v-bind:label="$t('PersonalInfoModify.gender')"
+        v-bind:label="$t('firstLogin.gender')"
         required
         outlined
         hide-details
         :menu-props="{ top: false, offsetY: true }"
       ></v-select>
 
+      <!-- Birthdate and BloodType -->
       <v-row class="mb-5 mt-4">
         <v-col cols="12" md="6" sm="12">
           <v-menu
@@ -71,16 +78,16 @@
             ></v-date-picker>
           </v-menu>
         </v-col>
+
         <v-col cols="12" md="6" sm="12">
           <v-select
             v-model="form.personalInfo.blood_type"
-            :items="form.blood_type_list"
+            :items="form.bloodTypeList"
             item-text="label"
             item-value="id"
             v-bind:label="$t('PersonalInfoModify.bloodType')"
             required
             outlined
-            return-object
             hide-details
             :menu-props="{ top: true, offsetY: true }"
           ></v-select>
@@ -92,18 +99,9 @@
       <v-spacer></v-spacer>
       <v-btn
         color="secondary"
-        class="mr-4"
-        outlined
-        :to="{ name: 'personal-info' }"
-      >
-        {{ $t("Common.cancel") }}
-      </v-btn>
-
-      <v-btn
-        color="secondary"
         class="mr-2"
         :disabled="!isComplete"
-        @click="$store.dispatch('updatePersonalInfo')"
+        @click="$store.dispatch('createPatient')"
       >
         {{ $t("Common.confirm") }}
       </v-btn>
@@ -113,31 +111,24 @@
 
 <script>
 export default {
-  name: "PersonalInfoModify",
+  name: "FirstLogin",
 
   data() {
     return {
       birthDateMenu: false,
       valid: false,
       nameRules: [
-        (v) => v ? v.length > 2 || this.$t("PersonalInfoModify.rules.minLength") : "",
-        (v) =>/^[aA-zZàèéìòù ']{2,30}$/.test(v) ||
-              this.$t("PersonalInfoModify.rules.onlyLetters"),
+        (v) => (v ? v.length > 2 || this.$t("firstLogin.rules.minLength") : ""),
+        (v) =>
+          /^[aA-zZàèéìòù ']{2,30}$/.test(v) ||
+          this.$t("firstLogin.rules.onlyLetters"),
       ],
-      select: { state: 'Florida', abbr: 'FL' },
-        items: [
-          { state: 'Florida', abbr: 'FL' },
-          { state: 'Georgia', abbr: 'GA' },
-          { state: 'Nebraska', abbr: 'NE' },
-          { state: 'California', abbr: 'CA' },
-          { state: 'New York', abbr: 'NY' },
-        ],
     };
   },
 
   computed: {
     form() {
-      var formData = this.$store.state.personalInfoModifyStore.form_pi_modify;
+      var formData = this.$store.state.firstLoginStore.form_add_first_patient;
       // initialize the birthDate calendar
       if (
         formData.personalInfo.birth_date == "" ||
@@ -148,8 +139,7 @@ export default {
     },
 
     isComplete() {
-      var formData = this.$store.state.personalInfoModifyStore.form_pi_modify;
-
+      var formData = this.$store.state.firstLoginStore.form_add_first_patient;
       return (
         formData.personalInfo.firstname &&
         formData.personalInfo.blood_type &&
@@ -157,11 +147,10 @@ export default {
         formData.personalInfo.birth_date
       );
     },
-
   },
 
   mounted() {
-    this.$store.dispatch("prepareForm");
+    this.$store.dispatch('prepareFormFirstLogin')
   },
 
   methods: {
@@ -177,28 +166,4 @@ export default {
 </script>
 
 <style scoped>
-.first-table-column {
-  min-width: 30px;
-  max-width: 60px;
-}
-
-.header-table {
-  color: #5f6368;
-  font-weight: 500;
-  font-size: 0.6875rem;
-}
-
-.element-table {
-  color: #202124;
-  font-weight: 400;
-  font-size: 1rem;
-}
-
-.fiscal-code-style input {
-  text-transform: uppercase;
-}
-
-.v-btn:before {
-  background-color: #fff !important ;
-}
 </style>

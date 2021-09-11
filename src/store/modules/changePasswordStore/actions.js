@@ -7,14 +7,14 @@ export default {
     async confirmChangePassword({state, commit}){ 
         const formData = new FormData();
         formData.append('old_password', state.form.oldPassword)
-        formData.append('new_password1', state.form.newPassword1)
-        formData.append('new_password2', state.form.newPassword2)
+        formData.append('new_password', state.form.newPassword1)
+        //formData.append('new_password2', state.form.newPassword2)
 
-        await axios.post('/changePassword', formData)
+        await axios.put('auth/change-pass/', formData)
         .then(response => {
             
             // go to user-settings
-            if(response.status == 200){                    
+            if(response.status >= 200){                    
                 console.log('Api change password - POST')
                 console.log(response)
 

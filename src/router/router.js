@@ -43,6 +43,15 @@ export default [
     },
   },
   {
+    path: "/user/first-login",
+    name: "first-login",
+    component: () => import("@/views/FirstLogin"),
+    meta: {
+      requiresAuth: true,
+      title: "First Login View",
+    },
+  },
+  {
     path: "/user/personal-info/modify",
     name: "personal-info-modify",
     component: () => import("@/views/PersonalInfoModify"),

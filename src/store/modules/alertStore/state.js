@@ -2,6 +2,7 @@ export default {
     alert:{
         showAlert: false,
         message: "",
-        type: "warning"
+        type: "warning",
+        dismissible: true
     }    
 }
