@@ -27,7 +27,7 @@ Take a look at the **[Backend Mediheart Repo](https://github.com/gppmad/medihear
 
 If you want to run the **Docker** container locally, please run
 ```
-docker-compose up
+sh build_and_run.sh
 ```
 
 
